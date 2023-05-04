@@ -373,6 +373,7 @@ namespace DuiLib {
 		void SetDragDrop(IDragDropUI* pDragDrop);
 		virtual bool OnDrop(FORMATETC* pFmtEtc, STGMEDIUM& medium,DWORD *pdwEffect);
 
+		bool IsValid();
 		bool AttachDialog(CControlUI* pControl);
 		bool InitControls(CControlUI* pControl, CControlUI* pParent = NULL);
 		void ReapObjects(CControlUI* pControl);
@@ -490,7 +491,8 @@ namespace DuiLib {
 		CControlUI* m_pRoot;
 		CControlUI* m_pFocus;
 		CControlUI* m_pEventHover;
-		CControlUI* m_pEventClick;
+        CControlUI* m_pEventClick;
+        CControlUI* m_pEventRClick;
 		CControlUI* m_pEventKey;
 		CControlUI* m_pLastToolTip;
 		//

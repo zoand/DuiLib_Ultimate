@@ -5,7 +5,7 @@ namespace DuiLib
 {
 	IMPLEMENT_DUICONTROL(CRingUI)
 
-	CRingUI::CRingUI() : m_fCurAngle(0.0f), m_pBkimage(NULL)
+		CRingUI::CRingUI() : m_fCurAngle(0.0f), m_pBkimage(NULL)
 	{
 	}
 
@@ -53,10 +53,14 @@ namespace DuiLib
 			int iHeight = rcItem.bottom - rcItem.top;
 			Gdiplus::PointF centerPos(rcItem.left + iWidth/2, rcItem.top + iHeight/2);
 
+			// 解决偶数时抖动问题
+			if ((iWidth % 2) == 0) centerPos.X -= 0.5;
+			if ((iHeight % 2) == 0) centerPos.Y -= 0.5;
+
 			Gdiplus::Graphics graphics(hDC);
 			graphics.TranslateTransform(centerPos.X,centerPos.Y);
 			graphics.RotateTransform(m_fCurAngle);
-			graphics.TranslateTransform(-centerPos.X, -centerPos.Y);//��ԭԴ��
+			graphics.TranslateTransform(-centerPos.X, -centerPos.Y);//还原源点
 			graphics.DrawImage(m_pBkimage,rcItem.left,rcItem.top,iWidth,iHeight);
 		}
 	}
@@ -79,11 +83,17 @@ namespace DuiLib
 	void CRingUI::InitImage()
 	{
 		TImageInfo* pImageInfo = CRenderEngine::GdiplusLoadImage(GetBkImage());
-		if(pImageInfo == NULL) return;
+		if(pImageInfo != NULL) {
+			m_pBkimage = pImageInfo->pImage;
 
-		m_pBkimage = pImageInfo->pImage;
-		if ( NULL == m_pBkimage ) return;
-		if(m_pManager) m_pManager->SetTimer(this, RING_TIMERID, 100);
+			delete pImageInfo;
+			pImageInfo = NULL;
+
+			if(m_pManager != NULL && m_pBkimage != NULL) {
+				m_pManager->SetTimer(this, RING_TIMERID, 100);
+			}
+		}
+
 	}
 
 	void CRingUI::DeleteImage()
