@@ -38,8 +38,10 @@
     <ClCompile Include="..\DuiLib\Control\UILabel.cpp" />
     <ClCompile Include="..\DuiLib\Control\UIList.cpp" />
     <ClCompile Include="..\DuiLib\Control\UIListEx.cpp" />
+    <ClCompile Include="..\DuiLib\Control\UILoading.cpp" />
     <ClCompile Include="..\DuiLib\Control\UIMenu.cpp" />
     <ClCompile Include="..\DuiLib\Control\UIOption.cpp" />
+    <ClCompile Include="..\DuiLib\Control\UIPageControl.cpp" />
     <ClCompile Include="..\DuiLib\Control\UIProgress.cpp" />
     <ClCompile Include="..\DuiLib\Control\UIRichEdit.cpp" />
     <ClCompile Include="..\DuiLib\Control\UIRing.cpp" />
@@ -105,8 +107,10 @@
     <ClInclude Include="..\DuiLib\Control\UILabel.h" />
     <ClInclude Include="..\DuiLib\Control\UIList.h" />
     <ClInclude Include="..\DuiLib\Control\UIListEx.h" />
+    <ClInclude Include="..\DuiLib\Control\UILoading.h" />
     <ClInclude Include="..\DuiLib\Control\UIMenu.h" />
     <ClInclude Include="..\DuiLib\Control\UIOption.h" />
+    <ClInclude Include="..\DuiLib\Control\UIPageControl.h" />
     <ClInclude Include="..\DuiLib\Control\UIProgress.h" />
     <ClInclude Include="..\DuiLib\Control\UIRichEdit.h" />
     <ClInclude Include="..\DuiLib\Control\UIRing.h" />

@@ -188,6 +188,12 @@
     <ClCompile Include="..\DuiLib\Utils\WinImplBase.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="..\DuiLib\Control\UILoading.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DuiLib\Control\UIPageControl.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\DuiLib\StdAfx.h">
@@ -375,6 +381,12 @@
     </ClInclude>
     <ClInclude Include="..\DuiLib\Utils\WinImplBase.h">
       <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DuiLib\Control\UILoading.h">
+      <Filter>Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DuiLib\Control\UIPageControl.h">
+      <Filter>Control</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
